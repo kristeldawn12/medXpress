@@ -5,7 +5,6 @@ import { v4 as uuidv4 } from "uuid";
 import { ImageToBase64 } from "../utility/ImagetoBase64.js";
 import { ImFolderUpload } from "react-icons/im";
 import { useNavigate } from "react-router-dom";
-import cogoToast from "cogo-toast";
 import axios from "axios";
 import SideBarNav from "../components/SideBarNav";
 
@@ -142,13 +141,13 @@ const OrderRx = () => {
       );
 
       const dataRes = response.data;
-      cogoToast.success(dataRes.message);
+      alert(dataRes.message);
 
       // Update prescription data to trigger re-render
       getprescriptionData();
     } catch (error) {
       console.error(error);
-      cogoToast.error("Error submitting prescription");
+      alert("Error submitting prescription");
     }
   };
 

@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { PharmContext } from "./PharmContext";
 
 import axios from "axios";
-import cogoToast from "cogo-toast";
 
 const PharmProvider = (props) => {
   // LOGIN
@@ -46,17 +45,17 @@ const PharmProvider = (props) => {
     const { firstName, lastName, dateOfBirth } = searchPatientData;
 
     if (firstName === "") {
-      cogoToast.error("Please enter a first name.");
+      alert("Please enter a first name.");
       return;
     }
 
     if (lastName === "") {
-      cogoToast.error("Please enter a last name.");
+      alert("Please enter a last name.");
       return;
     }
 
     if (dateOfBirth === "") {
-      cogoToast.error("Please enter date of birth.");
+      alert("Please enter date of birth.");
       return;
     }
 
@@ -69,7 +68,7 @@ const PharmProvider = (props) => {
     );
 
     if (filteredPatientData.length === 0) {
-      cogoToast.error("Patient not found");
+      alert("Patient not found");
     }
 
     setfilteredPatientSearch(filteredPatientData);
@@ -161,10 +160,10 @@ const PharmProvider = (props) => {
       setPrescriptionData(updatedPrescriptionData);
 
       // Show success message
-      cogoToast.success(`Prescription updated to ${newStatus}`);
+      alert(`Prescription updated to ${newStatus}`);
     } catch (err) {
       console.log(err);
-      cogoToast.error(err.message);
+      alert(err.message);
     }
   };
 
@@ -188,10 +187,10 @@ const PharmProvider = (props) => {
       );
 
       // Show success message
-      cogoToast.success(`Prescription archived`);
+      alert(`Prescription archived`);
     } catch (err) {
       console.log(err);
-      cogoToast.error(err.message);
+      alert(err.message);
     }
   };
 

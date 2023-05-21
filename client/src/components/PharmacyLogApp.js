@@ -5,7 +5,6 @@ import "../App.css";
 import { Fade } from "react-awesome-reveal";
 
 import axios from "axios";
-import cogoToast from "cogo-toast";
 import { PharmContext } from "../context/PharmContext";
 import PharmRoutes from "../Routes";
 import { useNavigate } from "react-router-dom";
@@ -87,7 +86,7 @@ function PharmacyLogApp() {
               }
             );
             const dataRes = response.data;
-            cogoToast.success(dataRes.message);
+            alert(dataRes.message);
             // Reset form fields
             setData(initialFormData);
           } catch (error) {
@@ -96,15 +95,13 @@ function PharmacyLogApp() {
               error.response.status === 400 &&
               error.response.data.error === "Email already exists"
             ) {
-              cogoToast.error(
-                "Email already exists. Please choose a different email."
-              );
+              alert("Email already exists. Please choose a different email.");
             } else {
-              cogoToast.error("An error occurred. Please try again.");
+              alert("An error occurred. Please try again.");
             }
           }
         } else {
-          cogoToast.error("Please select at least one profession.");
+          alert("Please select at least one profession.");
         }
       }
     }
