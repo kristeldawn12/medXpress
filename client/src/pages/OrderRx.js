@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext, useEffect, useState } from "react";
 import { PharmContext } from "../context/PharmContext";
 import { v4 as uuidv4 } from "uuid";
@@ -28,6 +29,7 @@ const clinicDepartments = [
 
 const OrderRx = () => {
   const navigate = useNavigate();
+  const [apiURL, setApiURL] = useState("http://localhost:5000");
 
   const { filteredPatientSearch, loggedInUser, getprescriptionData } =
     useContext(PharmContext);
@@ -130,7 +132,7 @@ const OrderRx = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_SERVER_DOMAIN}/prescriptionData/uploadPrescriptionData`,
+        `${apiURL}/prescriptionData/uploadPrescriptionData`,
         prescriptionInfo,
         {
           headers: {

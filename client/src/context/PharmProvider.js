@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { PharmContext } from "./PharmContext";
 
@@ -7,6 +9,8 @@ import cogoToast from "cogo-toast";
 const PharmProvider = (props) => {
   // LOGIN
   const [loggedIn, setLoggedIn] = useState(false);
+  const [apiURL, setApiURL] = useState("http://localhost:5000");
+
   const handleLogout = (e) => {
     if (e) {
       e.preventDefault();
@@ -20,9 +24,7 @@ const PharmProvider = (props) => {
   // All PATIENT DATA
   const [patientData, setPatientData] = useState([]);
   const getPatientData = async () => {
-    const response = await axios.get(
-      `${process.env.REACT_APP_SERVER_DOMAIN}/patientData`
-    );
+    const response = await axios.get(`${apiURL}/patientData`);
     setPatientData(response.data.data);
   };
 
@@ -97,9 +99,7 @@ const PharmProvider = (props) => {
   // ALL USER DATA
   const [userData, setUserData] = useState([]);
   const getUserData = async () => {
-    const response = await axios.get(
-      `${process.env.REACT_APP_SERVER_DOMAIN}/userData`
-    );
+    const response = await axios.get(`${apiURL}/userData`);
 
     setUserData(response.data.data);
   };
@@ -125,9 +125,7 @@ const PharmProvider = (props) => {
 
   const [prescriptionData, setPrescriptionData] = useState([]);
   const getprescriptionData = async () => {
-    const response = await axios.get(
-      `${process.env.REACT_APP_SERVER_DOMAIN}/prescriptionData`
-    );
+    const response = await axios.get(`${apiURL}/prescriptionData`);
 
     setPrescriptionData(response.data.data);
   };
@@ -139,7 +137,7 @@ const PharmProvider = (props) => {
     e.preventDefault();
     try {
       const response = await axios.patch(
-        `${process.env.REACT_APP_SERVER_DOMAIN}/prescriptionData/updateStatus/${id}`,
+        `${apiURL}/prescriptionData/updateStatus/${id}`,
         { status: newStatus },
         {
           headers: {
@@ -175,7 +173,7 @@ const PharmProvider = (props) => {
     e.preventDefault();
     try {
       const response = await axios.patch(
-        `${process.env.REACT_APP_SERVER_DOMAIN}/prescriptionData/archivePrescription/${id}`,
+        `${apiURL}/prescriptionData/archivePrescription/${id}`,
         { deleted: true },
         {
           headers: {

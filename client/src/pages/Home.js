@@ -11,7 +11,6 @@ const Home = () => {
     handleInputChange,
     handleSearch,
     clearSearch,
-    loggedInUser,
   } = useContext(PharmContext);
 
   const navigate = useNavigate();

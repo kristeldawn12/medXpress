@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useContext, useState } from "react";
 import "../App.css";
@@ -22,6 +23,7 @@ const initialFormData = {
 
 function PharmacyLogApp() {
   const navigate = useNavigate();
+  const [apiURL, setApiURL] = useState("http://localhost:5000");
 
   const { loggedIn, setLoggedIn, userData, setloggedInUser } =
     useContext(PharmContext);
@@ -76,7 +78,7 @@ function PharmacyLogApp() {
         if (isPhysician || isPharmacist) {
           try {
             const response = await axios.post(
-              `${process.env.REACT_APP_SERVER_DOMAIN}/userData/register`,
+              `${apiURL}/userData/register`,
               data,
               {
                 headers: {
