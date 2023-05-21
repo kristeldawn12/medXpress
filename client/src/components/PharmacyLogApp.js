@@ -23,7 +23,7 @@ const initialFormData = {
 
 function PharmacyLogApp() {
   const navigate = useNavigate();
-  const [apiURL, setApiURL] = useState("http://localhost:5000");
+  const [apiURL, setApiURL] = useState("https://medxpress.onrender.com");
 
   const { loggedIn, setLoggedIn, userData, setloggedInUser } =
     useContext(PharmContext);

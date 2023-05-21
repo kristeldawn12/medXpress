@@ -9,7 +9,7 @@ import cogoToast from "cogo-toast";
 const PharmProvider = (props) => {
   // LOGIN
   const [loggedIn, setLoggedIn] = useState(false);
-  const [apiURL, setApiURL] = useState("http://localhost:5000");
+  const [apiURL, setApiURL] = useState("https://medxpress.onrender.com");
 
   const handleLogout = (e) => {
     if (e) {
@@ -130,7 +130,7 @@ const PharmProvider = (props) => {
     setPrescriptionData(response.data.data);
   };
 
-  console.log(prescriptionData);
+  // console.log(prescriptionData);
 
   // UPDATE PRESCRIPTION DATA
   const handleStatusUpdate = async (e, id, newStatus) => {

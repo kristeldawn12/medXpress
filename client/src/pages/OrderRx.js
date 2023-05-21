@@ -29,7 +29,7 @@ const clinicDepartments = [
 
 const OrderRx = () => {
   const navigate = useNavigate();
-  const [apiURL, setApiURL] = useState("http://localhost:5000");
+  const [apiURL, setApiURL] = useState("https://medxpress.onrender.com");
 
   const { filteredPatientSearch, loggedInUser, getprescriptionData } =
     useContext(PharmContext);
@@ -87,7 +87,7 @@ const OrderRx = () => {
     prescriptionInfo.clinicName,
   ]);
 
-  console.log("This is the prescriptionInfo", prescriptionInfo);
+  // console.log("This is the prescriptionInfo", prescriptionInfo);
 
   // Uploading prescription image
   const uploadImage = async (e) => {
@@ -194,7 +194,7 @@ const OrderRx = () => {
                     className="my-2 py-1 w-46 h-8"
                     aria-label="Select Clinic"
                     id="clinic-select"
-                    value={selectedClinic}
+                    defaultValue={selectedClinic}
                     onChange={handleClinicName}
                   >
                     <option value="">Select Clinic</option>
@@ -202,7 +202,7 @@ const OrderRx = () => {
                     {clinicDepartments.map((clinic, index) => (
                       <option
                         key={index}
-                        value={clinic}
+                        defaultValue={clinic}
                         selected={clinic === selectedClinic}
                       >
                         {clinic}
