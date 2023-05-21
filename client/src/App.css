@@ -1,0 +1,336 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-image: url(./assets/capsule.jpg);
+  background-size: cover;
+}
+
+.brand {
+  font-size: 24px;
+}
+
+header,
+footer {
+  background-color: #0077be;
+  color: #fff;
+  padding: 0.3rem;
+}
+
+header h1 {
+  margin: 0;
+}
+
+main {
+  position: relative;
+  top: 100px;
+}
+
+.container {
+  max-width: 500px;
+  margin-top: 50px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+form h2 {
+  margin-bottom: 1rem;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+form input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 1rem;
+}
+
+form button {
+  background-color: #0077be;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.log {
+  z-index: 2;
+  background-color: #0077be;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.cta {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.cta a {
+  color: #fff;
+  text-decoration: none;
+  background-color: #0077be;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.cta a:hover {
+  background-color: #fff;
+  color: #0077be;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 20px;
+  float: left;
+  padding-top: 1px;
+  margin-left: 5px;
+  margin-right: 10px;
+  margin-top: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  text-align: center;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  max-width: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 600px;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.modal-content p {
+  margin: 20px 0;
+  color: #333;
+}
+
+.modal-content button {
+  margin-top: 20px;
+  background-color: #0077be;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.modal-content button:hover {
+  background-color: #fff;
+  color: #0077be;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #0077be;
+}
+
+.error {
+  color: red;
+}
+
+a {
+  text-decoration: none;
+  color: #0077be;
+  margin-left: 50px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.cancel {
+  color: #fff;
+  background-color: #0077be;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .header,
+  .footer {
+    padding: 0 1rem;
+  }
+
+  .main {
+    padding: 0 2rem;
+  }
+
+  .cta {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .cta a {
+    padding: 0.5rem 1rem;
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-content {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Red box shadow */
+    max-width: 100vw;
+    text-align: center;
+  }
+
+  .modal-content h2 {
+    margin-top: 0;
+    color: #333;
+  }
+
+  .modal-content p {
+    margin: 5px 0;
+    color: #333;
+  }
+
+  .modal-content button {
+    margin-top: 5px;
+    background-color: #0077be;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .modal-content button:hover {
+    background-color: #fff;
+    color: #0077be;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+  }
+
+  .close-btn:hover {
+    color: #0077be;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .header,
+  .footer {
+    padding: 0 0.5rem;
+  }
+
+  .main {
+    padding: 0 1rem;
+  }
+
+  .cta {
+    text-align: center;
+    margin-top: 0;
+  }
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
