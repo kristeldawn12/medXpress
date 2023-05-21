@@ -10,10 +10,8 @@ const {
 } = require("../controller/patientDataController.js");
 
 // PATIENT DATA Routes
-router
-  .route("/medXpress/patientData/uploadPatientData")
-  .post(uploadPatientData);
-router.route("/medXpress/patientData").get(getPatientData);
+router.route("/patientData/uploadPatientData").post(uploadPatientData);
+router.route("/patientData").get(getPatientData);
 
 // USER DATA Controller
 const {
@@ -22,8 +20,8 @@ const {
 } = require("../controller/userDataController.js");
 
 // USER DATA Routes
-router.route("/medXpress/userData/register").post(uploadUserData);
-router.route("/medXpress/userData").get(getUserData);
+router.route("/userData/register").post(uploadUserData);
+router.route("/userData").get(getUserData);
 
 // PRESCRIPTION DATA Controller
 
